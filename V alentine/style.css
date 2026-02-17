@@ -1,0 +1,171 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff0f3; /* Pink lembut */
+    color: #590d22;
+    overflow-x: hidden;
+}
+
+/* Typography Khusus */
+h1, h2 {
+    font-family: 'Dancing Script', cursive;
+}
+
+/* --- Overlay Pembuka --- */
+#overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #ff4d6d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: white;
+    text-align: center;
+    transition: opacity 1s ease;
+}
+
+#overlay h1 { font-size: 3rem; margin-bottom: 20px; }
+
+#start-btn {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    background: white;
+    color: #ff4d6d;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+#start-btn:hover { transform: scale(1.1); }
+
+/* --- Konten Utama --- */
+.hidden { display: none; }
+
+header {
+    text-align: center;
+    padding: 50px 20px;
+    animation: fadeIn 2s;
+}
+
+header h1 { font-size: 3.5rem; color: #a4133c; }
+
+/* --- Galeri Grid --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Kartu Polaroid */
+.photo-card {
+    background: white;
+    padding: 15px 15px 50px 15px; /* Padding bawah besar utk caption ala polaroid */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 2px;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease, z-index 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+.photo-card:hover {
+    transform: scale(1.05) rotate(-2deg);
+    z-index: 10;
+    box-shadow: 0 15px 30px rgba(255, 77, 109, 0.4);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 300px; /* Tinggi seragam */
+    object-fit: cover; /* Agar foto tidak gepeng */
+    border-radius: 2px;
+}
+
+.photo-card .date {
+    position: absolute;
+    bottom: 15px;
+    left: 0; right: 0;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #555;
+}
+
+/* --- Surat Cinta --- */
+.love-letter {
+    max-width: 700px;
+    margin: 80px auto;
+    padding: 40px;
+    background: white;
+    border: 2px dashed #ff8fa3;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.love-letter h2 { margin-bottom: 20px; color: #ff4d6d; }
+.love-letter p { line-height: 1.8; font-size: 1.1rem; }
+.signature { margin-top: 30px; font-weight: bold; font-style: italic; }
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* --- Lightbox (Pop-up Foto) --- */
+.lightbox {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0; top: 0;
+    width: 100%; height: 100%; 
+    background-color: rgba(0,0,0,0.9); 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80vh;
+    border: 5px solid white;
+    border-radius: 5px;
+}
+
+#caption {
+    margin-top: 20px;
+    color: white;
+    font-size: 1.5rem;
+    font-family: 'Dancing Script', cursive;
+}
+
+.close {
+    position: absolute;
+    top: 20px; right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Animasi Fade In */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
